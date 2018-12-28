@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Styles </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th> Name </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${styles.empty}">
+                        <td colspan="2"> No Styles Available </td>
+                    </tr>
+                    <tr th:each="style : ${styles}">
+                        <td><a th:href="@{/styles/info/{name}(name=${style.name})}"><span th:text="${style.name}"> Name </span></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-success" href="#" th:href="@{/styles/create}"> Add Style </a>
+                <a class="btn btn-primary" href="#" th:href="@{/styles/edit}" th:classappend="${styles.empty} ? 'disabled' : ''"> Edit Styles </a>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

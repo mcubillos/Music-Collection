@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>  <span class="b" th:text="${person.getName()}"></span> </h1>
+                <h3>  <span class="b" th:text="${person.getYears()}"></span> </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-info" href="#" th:href="@{/styles/all}"> Back to All Styles </a>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

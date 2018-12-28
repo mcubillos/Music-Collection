@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> People </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Years </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${people.empty}">
+                        <td colspan="2"> No People Available </td>
+                    </tr>
+                    <tr th:each="person : ${people}">
+                        <td><a th:href="@{/people/info/{name}(name=${person.name})}"><span th:text="${person.name}"> Name </span></a></td>
+                        <td><span th:text="${person.years}"> Years </span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-success" href="#" th:href="@{/people/create}"> Add Person </a>
+                <a class="btn btn-primary" href="#" th:href="@{/people/edit}" th:classappend="${people.empty} ? 'disabled' : ''"> Edit People </a>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

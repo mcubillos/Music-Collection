@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Add Artist </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-info" href="#" th:href="@{/artists/all}"> Back to All Artists </a>
+                <form action="#" class="form-horizontal"
+                      th:action="@{/artists/save}"
+                      th:object="${form}"
+                      method="post">
+                    <fieldset>
+					<span class="pull-right">
+						    <input type="submit" id="submitButton" class="btn btn-success" th:value="Save">
+						    <input type="reset" id="resetButton" class="btn btn-danger" th:value="Reset"/>
+					</span>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th> Name </th>
+                                <th> Years </th>
+                                <th> Styles </th>
+                                <th> Members </th>
+                                <th> Related </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="artist, itemStat : *{artists}">
+                                <td><input th:placeholder="Name + ' ' + ${itemStat.count}" th:field="*{artists[__${itemStat.index}__].name}" required/></td>
+                                <td><input th:placeholder="Years + ' ' + ${itemStat.count}" th:field="*{artists[__${itemStat.index}__].years}" required/></td>
+                                <td>
+                                    <select th:field="*{artists[__${itemStat.index}__].styles}" size="2" multiple="multiple">
+                                        <option th:each="style : ${styles}"
+                                                th:value="${{style}}"
+                                                th:text="${style.name}">
+                                        </option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select th:field="*{artists[__${itemStat.index}__].members}" size="2" multiple="multiple">
+                                        <option th:each="member : ${members}"
+                                                th:value="${{member}}"
+                                                th:text="${member.name}">
+                                        </option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select th:field="*{artists[__${itemStat.index}__].related}" size="2" multiple="multiple">
+                                        <option th:each="artist : ${related}"
+                                                th:value="${{artist}}"
+                                                th:text="${artist.name}">
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

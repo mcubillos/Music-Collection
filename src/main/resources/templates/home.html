@@ -1,0 +1,316 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.1">
+        <div class="hero" id="highlighted">
+            <div class="inner">
+                <!--Slideshow-->
+                <div id="highlighted-slider" class="container">
+                    <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true, "navigation":true, "transitionStyle":"fadeUp"}'>
+                        <!--Slideshow content-->
+                        <!--Slide 1-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6 col-md-push-6 item-caption">
+                                    <h2 class="h1 text-weight-light">
+                                        Welcome to <span class="text-primary">Musify</span>
+                                    </h2>
+                                    <h4>
+                                        The perfect place where you can find your favorite music.
+                                    </h4>
+                                    <p>You can search by your artist or style</p>
+                                </div>
+                                <div class="col-md-6 col-md-pull-6 hidden-xs">
+                                    <img th:src="@{/img/slides/slide1.png}" alt="Slide 1" class="center-block img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                        <!--Slide 2-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-md-6 text-right-md item-caption">
+                                    <h2 class="h1 text-weight-light">
+                                        <span class="text-primary">Musify</span>
+                                    </h2>
+                                    <h4>
+                                        Complete information about your favs.
+                                    </h4>
+                                </div>
+                                <div class="col-md-6 hidden-xs">
+                                    <img th:src="@{/img/slides/slide2.png}" alt="Slide 2" class="center-block img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mission Statement -->
+    <div class="mission text-center block block-pd-sm block-bg-noise">
+      <div class="container">
+        <h2 class="text-shadow-white">
+            We are the page where you can find information about your favorite artists and styles.
+            <a th:src="@{about.html}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+          </h2>
+      </div>
+    </div>
+    <!--Showcase-->
+    <div class="showcase block block-border-bottom-grey">
+      <div class="container">
+        <h2 class="block-title">
+            Styles
+          </h2>
+        <p>These are some styles.</p>
+        <div class="item-carousel" data-toggle="owlcarousel" data-owlcarousel-settings='{"items":4, "pagination":false, "navigation":true, "itemsScaleUp":true}'>
+          <div class="item">
+            <a th:href="@{/styles/info/Pop}" class="overlay-wrapper">
+                <img th:src="@{/img/showcase/pop.png}" alt="Pop" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Pop</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a th:href="@{/styles/info/Pop}">Pop</a>
+                </h4>
+              <a th:href="@{/styles/info/Pop}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a th:href="@{/styles/info/rock}" class="overlay-wrapper">
+                <img th:src="@{/img/showcase/rock.png}" alt="Rock" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Rock</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a th:href="@{/styles/info/Rock}">Rock</a>
+                </h4>
+              <a th:href="@{/styles/info/Rock}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a th:href="@{/styles/info/Country}" class="overlay-wrapper">
+                <img th:src="@{/img/showcase/country.png}" alt="Country" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Country</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a th:href="@{/styles/info/Country}">Country</a>
+                </h4>
+              <a th:href="@{/styles/info/Country}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a th:href="@{/styles/info/Rap}" class="overlay-wrapper">
+                <img th:src="@{/img/showcase/rap.png}" alt="Rap" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Rap</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a th:href="@{/styles/info/Rap}">Rap</a>
+                </h4>
+              <a th:href="@{/styles/info/Rap}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+          <div class="item">
+            <a th:href="@{/styles/info/Reggaeton}" class="overlay-wrapper">
+                <img th:src="@{/img/showcase/reggaeton.jpg}" alt="reggaeton" class="img-responsive underlay">
+                <span class="overlay">
+                  <span class="overlay-content"> <span class="h4">Reggaeton</span> </span>
+                </span>
+              </a>
+            <div class="item-details bg-noise">
+              <h4 class="item-title">
+                  <a th:href="@{/styles/info/Reggaeton}">Reggaeton</a>
+                </h4>
+              <a th:href="@{/styles/info/Reggaeton}" class="btn btn-more"><i class="fa fa-plus"></i>Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Services -->
+    <div class="services block block-bg-gradient block-border-bottom">
+      <div class="container">
+        <h2 class="block-title">
+            Functionalities
+          </h2>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-group fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+               Community
+              </h4>
+            <p>All can add new content or review it.</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+                Create new artist or styles
+              </h4>
+            <p>You can create your favorite artist if you can't find it.</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <span class="fa-stack fa-5x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-cogs fa-stack-1x fa-inverse"></i> </span>
+            <h4 class="text-weight-strong">
+                Managment information
+              </h4>
+            <p>All in one page.</p>
+            <p>
+              <a href="#" class="btn btn-more i-right">Learn More <i class="fa fa-angle-right"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+Background image callout with CSS overlay
+Usage: data-block-bg-img="IMAGE-URL" to apply a background image clearly via jQuery .block-bg-overlay = overlays the background image, colour is inherited from block-bg-* classes .block-bg-overlay-NUMBER = determines opcacity value of overlay from 1-9 (default is 5) ie. .block-bg-overlay-2 or .block-bg-overlay-6
+-->
+    <div class="block block-pd-sm block-bg-grey-dark block-bg-overlay block-bg-overlay-6 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK1088.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
+      <h2 class="h-xlg h1 m-a-0">
+          <span data-counter-up>100,000,0</span>s
+        </h2>
+      <h3 class="h-lg m-t-0 m-b-lg">
+          Of Happy Customers!
+        </h3>
+      <p>
+        <a href="#" class="btn btn-more btn-lg i-right">Join them today! <i class="fa fa-angle-right"></i></a>
+      </p>
+    </div>
+    <!--Customer testimonial & Latest Blog posts-->
+    <div class="testimonials block-contained">
+      <div class="row">
+        <!--Customer testimonial-->
+        <div class="col-md-6 m-b-lg">
+          <h3 class="block-title">
+              Testimonials
+            </h3>
+          <blockquote>
+            <p>All artists experience a lull in their work. It is a period of replenishing the soil – of plowing in and turning under our past experiences and watering them afresh with new ones.</p>
+            <img th:src="@{/img/misc/charles-quote.png}" alt="Charles Spencer Chaplin">
+            <small>
+                <strong>Charles Chaplin</strong>
+                <br>
+                British comic actor
+              </small>
+          </blockquote>
+        </div>
+        <!--Latest Blog posts-->
+        <div class="col-md-6 blog-roll">
+          <h3 class="block-title">
+              Latest From Our Blog
+            </h3>
+          <!-- Blog post 1-->
+          <div class="media">
+            <div class="media-left hidden-xs">
+              <!-- Date desktop -->
+              <div class="date-wrapper"> <span class="date-m">Feb</span> <span class="date-d">01</span> </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                  <a href="#" class="text-weight-strong">amet urna integer urna enim, sit arcu pid in nec?</a>
+                </h4>
+              <!-- Meta details mobile -->
+              <ul class="list-inline meta text-muted visible-xs">
+                <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> Fri 1st Feb 2013</li>
+                <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+              </ul>
+              <p>
+                Ut <strong>commodo ullamcorper risus nec</strong> mattis. Morbi tincidunt posuere turpis eu laoreet. Nulla facilisi. Aenean at massa leo. Vestibulum in varius arcu.
+                <a href="#">Read more <i class="fa fa-angle-right"></i></a>
+              </p>
+            </div>
+          </div>
+          <!-- Blog post 2 -->
+          <div class="media">
+            <div class="media-left hidden-xs">
+              <!-- Date desktop -->
+              <div class="date-wrapper"> <span class="date-m">Jan</span> <span class="date-d">17</span> </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                  <a href="#" class="text-weight-strong">a nec in sed hac ultrices cursus</a>
+                </h4>
+              <!-- Meta details mobile -->
+              <ul class="list-inline meta text-muted visible-xs">
+                <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> Thu 17th Jan 2013</li>
+                <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+              </ul>
+              <p>
+                Nam risus magna, fringilla sit amet blandit viverra, dignissim eget est. Aenean at massa leo. Vestibulum in varius arcu.
+                <a href="#">Read more <i class="fa fa-angle-right"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /content -->
+  <!-- Call out block -->
+  <div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+      <div class="row">
+        <h3 class="col-md-4">
+            Some of our Clients
+          </h3>
+        <div class="col-md-8">
+          <div class="row">
+            <!--Client logos should be within a 120px wide by 60px height image canvas-->
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 1">
+                  <img th:src="@{/img/clients/client1.png}" alt="Client 1 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 2">
+                  <img th:src="@{/img/clients/client2.png}" alt="Client 2 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 3">
+                  <img th:src="@{/img/clients/client3.png}" alt="Client 3 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 4">
+                  <img th:src="@{/img/clients/client4.png}" alt="Client 4 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 5">
+                  <img th:src="@{/img/clients/client5.png}" alt="Client 5 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 6">
+                  <img th:src="@{/img/clients/client6.png}" alt="Client 6 logo" class="img-responsive">
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>  <span class="b" th:text="${style.getName()}"></span> </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-info" href="#" th:href="@{/styles/all}"> Back to All Styles </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Artists </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th> Name </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${artists.empty}">
+                        <td colspan="2"> No Artists Available </td>
+                    </tr>
+                    <tr th:each="artist : ${artists}">
+                        <td><span th:text="${artist.name}"> Name </span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

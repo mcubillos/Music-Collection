@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layoutMenu.html">
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Artists </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Years </th>
+                        <th> Styles </th>
+                        <th> Members </th>
+                        <th> Related </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${artists.empty}">
+                        <td colspan="2"> No Artists Available </td>
+                    </tr>
+                    <tr th:each="artist : ${artists}">
+                        <td><a th:href="@{/artists/info/{name}(name=${artist.name})}"><span th:text="${artist.name}"> Name </span></a></td>
+                        <td><span th:text="${artist.years}"> Year </span></td>
+                        <td><span th:each="style : ${artist.styles}"> <span th:text="${style.name}"></span> </span></td>
+                        <td><span th:each="member : ${artist.members}"> <span th:text="${member.name}"></span> </span></td>
+                        <td><span th:each="relatedArtist : ${artist.related}"> <span th:text="${relatedArtist.name}"></span> </span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-success" href="#" th:href="@{/artists/create}"> Add Artist </a>
+                <a class="btn btn-primary" href="#" th:href="@{/artists/edit}" th:classappend="${artists.empty} ? 'disabled' : ''"> Edit Artists </a>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
